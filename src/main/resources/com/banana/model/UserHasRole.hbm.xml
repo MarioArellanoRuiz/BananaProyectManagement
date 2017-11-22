@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 22, 2017 12:40:05 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.banana.model.UserHasRole" table="user_has_role" catalog="db_banana_gest" optimistic-lock="version">
+        <composite-id name="id" class="com.banana.model.UserHasRoleId">
+            <key-property name="userIdUser" type="int">
+                <column name="user_id_user" />
+            </key-property>
+            <key-property name="roleIdRole" type="int">
+                <column name="role_id_role" />
+            </key-property>
+            <key-property name="proyectIdProyect" type="int">
+                <column name="proyect_id_proyect" />
+            </key-property>
+            <key-property name="taskIdTask" type="int">
+                <column name="task_id_task" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="proyect" class="com.banana.model.Proyect" update="false" insert="false" fetch="select">
+            <column name="proyect_id_proyect" not-null="true" />
+        </many-to-one>
+        <many-to-one name="role" class="com.banana.model.Role" update="false" insert="false" fetch="select">
+            <column name="role_id_role" not-null="true" />
+        </many-to-one>
+        <many-to-one name="task" class="com.banana.model.Task" update="false" insert="false" fetch="select">
+            <column name="task_id_task" not-null="true" />
+        </many-to-one>
+        <many-to-one name="user" class="com.banana.model.User" update="false" insert="false" fetch="select">
+            <column name="user_id_user" not-null="true" />
+        </many-to-one>
+        <property name="active" type="byte">
+            <column name="active" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

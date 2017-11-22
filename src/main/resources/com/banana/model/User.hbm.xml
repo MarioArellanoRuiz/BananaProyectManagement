@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 22, 2017 12:40:05 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.banana.model.User" table="user" catalog="db_banana_gest" optimistic-lock="version">
+        <id name="idUser" type="java.lang.Integer">
+            <column name="id_user" />
+            <generator class="identity" />
+        </id>
+        <property name="firtsName" type="string">
+            <column name="firts_name" length="45" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="last_name" length="45" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="15" />
+        </property>
+        <property name="code" type="string">
+            <column name="code" length="15" />
+        </property>
+        <property name="area" type="string">
+            <column name="area" length="45" />
+        </property>
+        <property name="active" type="java.lang.Byte">
+            <column name="active" />
+        </property>
+        <set name="userHasRoles" table="user_has_role" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id_user" not-null="true" />
+            </key>
+            <one-to-many class="com.banana.model.UserHasRole" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 22, 2017 12:40:05 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.banana.model.Role" table="role" catalog="db_banana_gest" optimistic-lock="version">
+        <id name="idRole" type="java.lang.Integer">
+            <column name="id_role" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="45" />
+        </property>
+        <property name="privileges" type="string">
+            <column name="privileges" length="10" />
+        </property>
+        <property name="active" type="java.lang.Byte">
+            <column name="active" />
+        </property>
+        <set name="userHasRoles" table="user_has_role" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="role_id_role" not-null="true" />
+            </key>
+            <one-to-many class="com.banana.model.UserHasRole" />
+        </set>
+    </class>
+</hibernate-mapping>
