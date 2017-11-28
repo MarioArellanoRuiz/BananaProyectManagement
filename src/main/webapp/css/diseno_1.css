@@ -1,0 +1,64 @@
+body{
+    background-color: rgba(148, 202, 255, 0.87);
+    background-image: url(../img/body/win7.jpg);
+	background-size: cover;
+}
+
+.nuevosP{
+	height: 227px;
+	background-color:rgb(85, 186, 253);
+	border-radius: 18px;
+	padding: 15px;
+	margin:35px;
+	-webkit-box-shadow: -9px 7px 20px 2px #9C9897;
+	box-shadow: -9px 7px 20px 2px #9C9897;
+
+}
+
+.proyectos{
+	float:left;
+	height:auto;
+	overflow: hidden;
+	background-color:rgba(70, 206, 247, 0.46);
+	/*background-image: url(../img/body/red_note3.png);*/
+	border-radius: 18px;
+	padding: 15px;
+	margin:35px 20px 35px 20px;
+	-webkit-box-shadow: -9px 7px 20px 2px #9C9897;
+	box-shadow: -9px 7px 20px 2px #9C9897;
+}
+
+.buttons{
+	float: left;
+}
+
+.title1{
+	font-size:18pt; 
+	color:white;
+}
+
+.title2{
+	font-size:11pt; 
+	color:rgb(0, 91, 151);
+	width: 100%;
+}
+
+
+.title3	{
+	font-size:18pt; 
+	color:white;
+	float: left;
+	width: 50%;
+}
+
+.title4{
+	color:white;
+	font-size:11pt; 
+}
+
+.title5	{
+	font-size:18pt; 
+	color:white;
+	float: left;
+	width: 100%;
+}
